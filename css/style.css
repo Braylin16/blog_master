@@ -1,0 +1,178 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Livvic', sans-serif;
+}
+
+body {
+    color: #fff;
+    background-color: #e0dede;
+}
+
+header {
+    background-color: black;
+    padding: 1px 0px;
+    margin-bottom: 30px;
+    box-shadow: 3px 8px 5px #c3c3c3;
+}
+
+h1 {
+    font-size: 1.7rem;
+    margin: 0px 40px;
+    padding: 4px 0px;
+}
+
+#contenedor {
+    width: 98%;
+    margin: 10px 10px;
+}
+
+form {
+    width: 50%;
+    height: auto;
+    background-color: #fff;
+    border-radius: 2px;
+    padding: 10px 10px;
+    margin: 18px 20%;
+    color: rgb(17, 17, 17);
+    box-shadow: 3px 8px 5px #c3c3c3;
+}
+
+h2 {
+    text-align: center;
+    padding: 5px 0px;
+}
+
+input[type="text"] {
+    margin: 7px 20px;
+    padding: 12px 7px;
+    border: 1px solid #c3c3c3;
+    border-radius: 1px;
+    width: 90%;
+    height: auto;
+}
+
+input[type="password"] {
+    margin: 7px 20px;
+    padding: 12px 7px;
+    border: 1px solid #c3c3c3;
+    border-radius: 1px;
+    width: 90%;
+    height: auto;
+}
+
+label {
+    margin: 3px 20px;
+    cursor: pointer;
+}
+
+select {
+    margin: 7px 20px;
+    padding: 4px 1px;
+    border-radius: 1px;
+}
+
+input[type="radio"] {
+    margin: 10px 20px;
+}
+
+button {
+    color: #fff;
+    background-color: #1e922d;
+    padding: 7px 10px;
+    margin: 7px 20px;
+    font-size: 1.2rem;
+    border-style: none;
+    border-radius: 1px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2fc443;
+}
+
+button:focus {
+    background-color: #2fc46d;
+    color: aliceblue;
+}
+
+p {
+    text-align: center;
+    padding: 3px 0px;
+}
+
+a {
+    text-decoration: none;
+    color: #1c9acc;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #5cc4ec;
+}
+
+a:focus {
+    color: #1ccc91;
+}
+
+p {
+    color: #606161;
+}
+
+.errors {
+    background-color: rgb(170, 143, 143);
+    border-radius: 3px;
+    border: 2px solid rgb(223, 81, 81);
+    width: 50%;
+    height: auto;
+    margin: 15px 20%;
+    padding: 10px 10px;
+}
+
+small {
+    color: #fff;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.inicio_error {
+    color: red;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* Sesion del home */
+
+.salir {
+    color: #1c9acc;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin: 0px 20%;
+    border-bottom: 4px solid #ccba1c;
+}
+
+.salir:hover {
+    color: #5cc4ec;
+}
+
+.salir:focus {
+    color: #1ccc91;
+}
+
+article {
+    padding: 20px 20px;
+    width: 50%;
+    height: auto;
+    border-radius: 3px;
+    background-color: #fff;
+    margin: 20px 20%;
+    box-shadow: 10px 10px 8px #c3c3c3;
+}
+
+.parrafo {
+    text-align: justify;
+    color: rgb(51, 49, 49);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+}
