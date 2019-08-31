@@ -27,7 +27,8 @@ if(isset($_POST['email']) and isset($_POST['password'])){
 
     $resultado = $sentencia->fetch();
 
-    if($resultado == true){	
+    if($resultado == true){
+        $_SESSION['email'] = $email;	
         header('Location: home.php');
     } else {
         $errors .= "* Credenciales incorrectas";
