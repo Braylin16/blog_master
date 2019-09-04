@@ -26,13 +26,20 @@ require_once 'backend/register.php';
 
 <main>
     <section id="contenedor">
+
+        <?php if(isset($errors) || isset($success)) : ?>
+            <div class="errors">
+                <small><?php echo  $errors . $success; ?></small>
+            </div>
+        <?php endif; ?>
+        
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" id="register">
             <h2>Registrate, es gratis</h2>
-            <input type="text" name="name" placeholder="Nombre" value="<?php if(isset($_POST["name"])){echo $name;} ?>"><br/>
-            <input type="text" name="surname" placeholder="Apellidos" value="<?php if(isset($_POST["surname"])){echo $surname;} ?>"><br/>
-            <input type="text" name="email" placeholder="Correo electronico" value="<?php if(isset($_POST["email"])){echo $email;} ?>"><br/>
-            <input type="password" name="password" placeholder="Contrase&ntilde;a"><br/>
-            <input type="password" name="password2" placeholder="Repite la Contrase&ntilde;a"><br/>
+            <input type="text" name="name" placeholder="Nombre" value="<?php if(isset($_POST["name"])){echo $name;} ?>" required><br/>
+            <input type="text" name="surname" placeholder="Apellidos" value="<?php if(isset($_POST["surname"])){echo $surname;} ?>" required><br/>
+            <input type="email" name="email" placeholder="Correo electronico" value="<?php if(isset($_POST["email"])){echo $email;} ?>" required><br/>
+            <input type="password" name="password" placeholder="Contrase&ntilde;a" required><br/>
+            <input type="password" name="password2" placeholder="Repite la Contrase&ntilde;a" required><br/>
             <!-- Fecha de nacimiento -->
             <label for="fecha">Fecha de Nacimiento</label><br/>
             <!-- Dia de nacimiento -->
@@ -79,13 +86,6 @@ require_once 'backend/register.php';
             <p>¿Ya estas registrado ?</p>
             <p><a href="index.php">Inicia Sesion</a></p>
         </form>
-
-        <?php if(isset($errors) || isset($success)) : ?>
-            <div class="errors">
-                <small><?php echo  $errors . $success; ?></small>
-            </div>
-        <?php endif; ?>
-
     </section>
 </main>
 
