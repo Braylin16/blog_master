@@ -44,17 +44,15 @@ require_once 'backend/register.php';
             <label for="fecha">Fecha de Nacimiento</label><br/>
             <!-- Dia de nacimiento -->
             <select name="day" id="fecha">
-                <option value='-1'>D&iacute;a</option>
                 <?php 
                     for($d=1; $d<=31; $d++){
-                        echo "<option value='$d' checked>$d</option>";
+                        echo "<option value='$d' selected>$d</option>";
                     }
                 ?>
             </select>
             <!-- Anio de nacimiento -->
             <select name="mes" id="mes">
-                <option value="-1">Mes</option>
-                <option value="enero" checked>Enero</option>
+                <option value="enero" selected>Enero</option>
                 <option value="febrero">Febrero</option>
                 <option value="marzo">Marzo</option>
                 <option value="abril">Abril</option>
@@ -69,10 +67,9 @@ require_once 'backend/register.php';
             </select>
             <!-- Mes de nacimiento -->
             <select name="anio" id="anio">
-                <option value='-1'>A&ntilde;o</option>
                 <?php 
                     for($a=1950; $a<=2010; $a++){
-                        echo "<option value='$a' checked>$a</option>";
+                        echo "<option value='$a' selected>$a</option>";
                     }
                 ?>
             </select><br/>
