@@ -63,6 +63,10 @@ if(isset($_POST['name']) and isset($_POST['surname']) and isset($_POST['email'])
         $errors .= "* Elige tu sexo <br />";
     }
 
+    // Convertir a mayusculas las primeras letras de cada palabra
+    $name = ucwords($name);
+    $surname = ucwords($surname);
+
     // Limpiar y validar los datos que nos llegan
     $name = htmlspecialchars($name);
     $name = trim($name);
@@ -82,6 +86,37 @@ if(isset($_POST['name']) and isset($_POST['surname']) and isset($_POST['email'])
     $password2 = htmlspecialchars($password2);
     $password2 = trim($password2);
 
+    // Validar la cantidad de carateres MAXIMO
+    $maximoName = strlen($name);
+    if($maximoName <= 15){
+
+    } else {
+        $errors .= "* El nombre no debe tener mas de 15 carateres <br/>";
+    }
+
+    $maximoSurname = strlen($surname);
+    if($maximoSurname <= 20){
+
+    } else {
+        $errors .= "* El Apellido no debe tener mas de 20 carateres <br/>";
+    }
+
+    // Validar la cantidad de carateres MINIMO
+    $minimoName = strlen($name);
+    if($minimoName >= 4){
+
+    } else {
+        $errors .= "* El nombre debe tener minimo 4 carateres <br/>";
+    }
+
+    $minimoSurname = strlen($surname);
+    if($minimoSurname >= 4){
+
+    } else {
+        $errors .= "* El Apellido debe tener minimo 4 carateres <br/>";
+    }
+
+    // Validar que el correo electronico sea valido
     if($email == false){
         $errors .= "* Esto no es un correo electronico";
     }
@@ -97,7 +132,7 @@ if(isset($_POST['name']) and isset($_POST['surname']) and isset($_POST['email'])
 
     // Comprobar que el email no sea repetido
     if($resultado != false){
-        $errors .= "* Este Correo electronico ya existe, prueba otro";
+        $errors .= "* Este correo electronico ya existe, prueba otro";
     }
 
     if($errors == ''){
