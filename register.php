@@ -78,7 +78,9 @@ require_once 'backend/register.php';
                 <input type="radio" name="sexo" id="hombre" value="masculino" checked>
 
                 <label for="mujer">Mujer</label>
-                <input type="radio" name="sexo" id="mujer" value="femenina"><hr/>
+                <input type="radio" name="sexo" id="mujer" value="femenina"><br/>
+                <label for="message">Describe como eres:</label><br/>
+                <textarea name="message" id="message" placeholder="A&ntilde;ade una descripción a tu usuario"></textarea>
             <button type="submit" name="entrar" name="submit">Registrate</button>
             <p>¿Ya estas registrado ?</p>
             <p><a href="index.php">Inicia Sesion</a></p>
@@ -88,6 +90,15 @@ require_once 'backend/register.php';
 
 <!-- Footer de la pagina -->
 <?php require 'footer.php'; ?>
+
+<!-- Jquery -->
+<!-- <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script> -->
+
+<!-- MainJS -->
+<!-- <script src="js/main.js"></script> -->
     
 </body>
 </html>

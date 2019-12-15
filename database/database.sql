@@ -7,5 +7,6 @@ CREATE TABLE users(
     day             varchar(10) not null,
     mes             varchar(50) not null,
     anio            varchar(50) not null,
-    sexo            varchar(20) not null
+    sexo            varchar(20) not null,
+    message         text not null
 )ENGINE=InnoDb;

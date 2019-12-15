@@ -13,7 +13,7 @@ $success = "";
 
 if(isset($_POST['name']) and isset($_POST['surname']) and isset($_POST['email']) and isset($_POST['password'])
  and isset($_POST['password2']) and isset($_POST['day']) and isset($_POST['mes']) and isset($_POST['anio'])
- and isset($_POST['sexo'])){
+ and isset($_POST['sexo']) and isset($_POST['message'])){
 
     $name = $_POST["name"];
     $surname = $_POST["surname"];
@@ -24,6 +24,7 @@ if(isset($_POST['name']) and isset($_POST['surname']) and isset($_POST['email'])
     $mes = $_POST["mes"];
     $anio = $_POST["anio"];
     $sexo = $_POST["sexo"];
+    $message = $_POST['message'];
 
     // Cifrar la password
     $password = hash('sha512', $password);
@@ -63,6 +64,10 @@ if(isset($_POST['name']) and isset($_POST['surname']) and isset($_POST['email'])
         $errors .= "* Elige tu sexo <br />";
     }
 
+    if(empty($_POST['message'])){
+        $errors .= "* Debes a&ntilde;adir una descripción a tu biografia";
+    }
+
     // Convertir a mayusculas las primeras letras de cada palabra
     $name = ucwords($name);
     $surname = ucwords($surname);
@@ -85,6 +90,10 @@ if(isset($_POST['name']) and isset($_POST['surname']) and isset($_POST['email'])
 
     $password2 = htmlspecialchars($password2);
     $password2 = trim($password2);
+
+    $message = htmlspecialchars($message);
+    $message = trim($message);
+    $message = filter_var($message, FILTER_SANITIZE_STRING);
 
     // Validar la cantidad de carateres MAXIMO
     $maximoName = strlen($name);
@@ -136,8 +145,8 @@ if(isset($_POST['name']) and isset($_POST['surname']) and isset($_POST['email'])
     }
 
     if($errors == ''){
-        $statement = $conexion->prepare('INSERT INTO users (id, name, surname, email, password, day, mes, anio, sexo) VALUES(
-            null, :name, :surname, :email, :password, :day, :mes, :anio, :sexo)'
+        $statement = $conexion->prepare('INSERT INTO users (id, name, surname, email, password, day, mes, anio, sexo, message) VALUES(
+            null, :name, :surname, :email, :password, :day, :mes, :anio, :sexo, :message)'
         );
         $statement->execute(array(
             ':name' => $name,
@@ -147,11 +156,12 @@ if(isset($_POST['name']) and isset($_POST['surname']) and isset($_POST['email'])
             ':day' => $day,
             ':mes' => $mes,
             ':anio' => $anio,
-            ':sexo' => $sexo
+            ':sexo' => $sexo,
+            ':message' => $message
         ));
 
         $success = "Te has registrado con exito";
-        header("Refresh:3; url=index.php");
+        header("Refresh:2; url=index.php");
     }
 }
 ?>

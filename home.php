@@ -15,6 +15,7 @@ $stmt->execute(['email' => $email]);
 while ($row = $stmt->fetch()) {
     $name = $row['name'];
     $surname = $row['surname'];
+    $message = $row['message'];
 }
 
 ?>
@@ -43,25 +44,7 @@ while ($row = $stmt->fetch()) {
     <a href="cerrar.php" class="salir">Cerrar Sesion</a>
         <article>
             <h3>Bienvenido: <?php echo $name . " " . $surname; ?></h3>
-            <p class="parrafo">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-            Rerum non repudiandae nisi quasi laudantium corrupti animi. Sint neque expedita 
-            a voluptatum culpa, distinctio consectetur saepe voluptas aliquid impedit sed veritatis?</p>
-
-            <p class="parrafo">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-            Rerum non repudiandae nisi quasi laudantium corrupti animi. Sint neque expedita 
-            a voluptatum culpa, distinctio consectetur saepe voluptas aliquid impedit sed veritatis?</p>
-
-            <p class="parrafo">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-            Rerum non repudiandae nisi quasi laudantium corrupti animi. Sint neque expedita 
-            a voluptatum culpa, distinctio consectetur saepe voluptas aliquid impedit sed veritatis?</p>
-
-            <p class="parrafo">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-            Rerum non repudiandae nisi quasi laudantium corrupti animi. Sint neque expedita 
-            a voluptatum culpa, distinctio consectetur saepe voluptas aliquid impedit sed veritatis?</p>
-
-            <p class="parrafo">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-            Rerum non repudiandae nisi quasi laudantium corrupti animi. Sint neque expedita 
-            a voluptatum culpa, distinctio consectetur saepe voluptas aliquid impedit sed veritatis?</p>
+            <p class="parrafo"><?php echo  $message; ?></p>
         </article>
     </section>
 </main>
