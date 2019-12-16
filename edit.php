@@ -45,9 +45,7 @@ while ($row = $stmt->fetch()) {
         <article>
             <h3>Describe tus gustos o algo más...</h3>
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-                <textarea name="message" id="formEdit" placeholder="<?php echo $name; ?>, edita tu biografia">
-                    <?php echo $message; ?>
-                </textarea>
+                <textarea name="message" id="formEdit" placeholder="<?php echo $name; ?>, edita tu biografia"><?php echo $message; ?></textarea>
 
                 <!-- Mensaje de error o exito -->
                 <?php if(isset($success) || isset($errors)) : ?>

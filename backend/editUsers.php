@@ -20,6 +20,10 @@ if(isset($_POST['name']) and isset($_POST['surname'])){
     $name = $_POST["name"];
     $surname = $_POST["surname"];
 
+    if(empty($name) || empty($surname)){
+        $errors = 'Errors, campos vacios';
+    }
+
     // Convertir a mayusculas las primeras letras de cada palabra
     $name = ucwords($name);
     $surname = ucwords($surname);
