@@ -33,7 +33,7 @@ require_once 'backend/register.php';
             </div>
         <?php endif; ?>
         
-        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" id="register">
+        <form class="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" id="register">
             <h2>Registrate, es gratis</h2>
             <input type="text" name="name" placeholder="Nombre" value="<?php if(isset($_POST["name"])){echo $name;} ?>" required><br/>
             <input type="text" name="surname" placeholder="Apellidos" value="<?php if(isset($_POST["surname"])){echo $surname;} ?>" required><br/>
