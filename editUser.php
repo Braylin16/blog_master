@@ -6,6 +6,7 @@ if(empty($_SESSION['email'])){
 }
 
 require_once 'conexion.php';
+require_once 'backend/editUsers.php';
 
 $email = $_SESSION['email'];
 
@@ -26,7 +27,7 @@ while ($row = $stmt->fetch()) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Blog Master</title>
+    <title>Blog Master | Edita tus datos</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <!-- Estilos CSS -->
@@ -44,9 +45,21 @@ while ($row = $stmt->fetch()) {
     <a href="cerrar.php" class="salir">Cerrar Sesion</a>
         <article>
             <h3>Bienvenido: <?php echo $name . " " . $surname; ?></h3>
-            <p class="parrafo"><?php echo  $message; ?></p><br/>
-            <a href="edit.php">Editar biografia</a>
-            <a class="right" href="editUser.php">Editar usuario</a>
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+                
+            <input type="text" name="name" placeholder="Nombre" value="<?php if(isset($name)){echo $name;} ?>" ><br/>
+
+            <input type="text" name="surname" placeholder="Apellidos" value="<?php if(isset($surname)){echo $surname;} ?>" ><br/>
+            
+            <!-- Mensaje de error o exito -->
+            <?php if(isset($success) || isset($errors)) : ?>
+                    <p class="verde"><?php echo $success; ?></p>
+                    <p class="rojo"><?php echo $errors; ?></p>
+            <?php endif ?>
+
+                <button type="submit" class="login" name="submit">Actualizar</button><br>
+
+            </form>
         </article>
     </section>
 </main>

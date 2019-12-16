@@ -80,7 +80,7 @@ require_once 'backend/register.php';
                 <label for="mujer">Mujer</label>
                 <input type="radio" name="sexo" id="mujer" value="femenina"><br/>
                 <label for="message">Describe como eres:</label><br/>
-                <textarea name="message" id="message" placeholder="A&ntilde;ade una descripción a tu usuario"></textarea>
+                <textarea name="message" id="message" placeholder="A&ntilde;ade una descripción a tu usuario"><?php if(isset($_POST['message'])){echo $message;} ?></textarea>
             <button type="submit" name="entrar" name="submit">Registrate</button>
             <p>¿Ya estas registrado ?</p>
             <p><a href="index.php">Inicia Sesion</a></p>

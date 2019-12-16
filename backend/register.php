@@ -112,10 +112,10 @@ if(isset($_POST['name']) and isset($_POST['surname']) and isset($_POST['email'])
 
     // Validar la cantidad de carateres MINIMO
     $minimoName = strlen($name);
-    if($minimoName >= 4){
+    if($minimoName >= 3){
 
     } else {
-        $errors .= "* El nombre debe tener minimo 4 carateres <br/>";
+        $errors .= "* El nombre debe tener minimo 3 carateres <br/>";
     }
 
     $minimoSurname = strlen($surname);
