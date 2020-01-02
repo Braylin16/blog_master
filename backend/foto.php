@@ -19,7 +19,7 @@ if(isset($_FILES['foto'])){
     $nameFoto = $foto['name'];
     $type = $foto['type'];
 
-    if($type == 'image/jpg' || $type == 'image/jpeg' || $type == 'image/png' || $type || 'image/git' || $type || 'image/gif'){
+    if($type == "image/jpg" || $type == "image/jpeg" || $type == "image/png" || $type == "image/git" || $type == "image/gif"){
 
         if(!is_dir('image')){
             mkdir('image', 0777);
@@ -28,18 +28,17 @@ if(isset($_FILES['foto'])){
             move_uploaded_file($foto['tmp_name'], 'image/'.$nameFoto);
 
             // Insertar la foto en la base de datos
-            if($errors == ''){
+            if(empty($errors)){
                 $statement = $conexion->prepare("UPDATE users SET foto = :nameFoto WHERE email = '$email'"
                 );
                 $statement->execute(array(
                     ':nameFoto' => $nameFoto
                 ));
 
-                $success = "Has colocado una foto de perfil";
-                header("Refresh:4; url=page2.php");
-
-
             }
+
+            $success = "Has colocado una foto de perfil";
+            header("Refresh:4; url=page2.php");
 
     }else{
         $errors = "El tipo de imagen $type no es soportado";
