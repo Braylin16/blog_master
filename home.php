@@ -16,6 +16,8 @@ while ($row = $stmt->fetch()) {
     $name = $row['name'];
     $surname = $row['surname'];
     $message = $row['message'];
+    $nameFoto = $row['foto'];
+    $sexo = $row['sexo'];
 }
 
 ?>
@@ -43,6 +45,19 @@ while ($row = $stmt->fetch()) {
     <section id="contenedor">
     <a href="cerrar.php" class="salir">Cerrar Sesion</a>
         <article>
+            <?php if($nameFoto == false){ ?>
+                <!-- Si el usuario no tiene foto de perfil, coloco una por defecto -->
+                <?php if($sexo == 'masculino') { ?>
+                    <p><a href="foto.php"><img src="img/hombre.png" class="perfil" alt="Imagen de usuario de <?=$name?>" title="Foto de perfil de <?=$name?>" height="150"></a></p>
+                <?php } else{  ?>
+                    <p><a href="foto.php"><img src="img/mujer.png" class="perfil" alt="Imagen de usuario de <?=$name?>" title="Foto de perfil de <?=$name?>" height="150"></a></p>
+                <?php } ?>
+
+            <?php }else{ ?>
+            <!-- Si tiene foto de perfil, coloco la que tiene -->
+            <p><a href="foto.php"><img src="image/<?=$nameFoto?>" class="perfil" alt="Imagen de usuario de <?=$name?>" title="Foto de perfil de <?=$name?>" height="150"></a></p>
+
+            <?php } ?>
             <h3>Bienvenido: <?php echo $name . " " . $surname; ?></h3>
             <p class="parrafo"><?php echo  $message; ?></p><br/>
             <a href="edit.php">Editar biografia</a>

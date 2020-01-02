@@ -160,8 +160,8 @@ if(isset($_POST['name']) and isset($_POST['surname']) and isset($_POST['email'])
             ':message' => $message
         ));
 
-        $success = "Te has registrado con exito";
-        header("Refresh:2; url=index.php");
+        $_SESSION['email'] = $email;	
+        header('Location: foto.php');
     }
 }
 ?>

@@ -1,7 +1,5 @@
 <?php
 
-// require_once './conexion.php';
-
 // Comprobar si el usuario ha inciado sesion
 if(!isset($_SESSION['email'])){
     header('Location: home.php');

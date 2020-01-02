@@ -31,7 +31,7 @@ if(isset($_POST['email']) and isset($_POST['password'])){
         $_SESSION['email'] = $email;	
         header('Location: home.php');
     } else {
-        $errors .= "* Credenciales incorrectas";
+        $errors .= "* Correo o Contraseña incorrecta";
     }
 }
 

@@ -1,3 +1,3 @@
 <footer>
-    <p>Copyright Blog Master &copy;2019</p>
+    <p>Copyright Blog Master &copy;<?=date('Y')?></p>
 </footer>
