@@ -9,6 +9,19 @@ body {
     background-color: #e0dede;
 }
 
+body::-webkit-scrollbar {
+	width: 8px; 
+}
+
+body::-webkit-scrollbar-thumb {
+	background: #1c9acc;
+	border-radius: 6px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+	background: #5cc4ec;
+}
+
 header {
     background-color: black;
     padding: 1px 0px;

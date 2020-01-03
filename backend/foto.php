@@ -19,7 +19,7 @@ if(isset($_FILES['foto'])){
     $nameFoto = $foto['name'];
     $type = $foto['type'];
 
-    if($type == "image/jpg" || $type == "image/jpeg" || $type == "image/png" || $type == "image/git" || $type == "image/gif"){
+    if($type == "image/jpg" || $type == "image/jpeg" || $type == "image/png" || $type == "image/git" || $type == "image/gif" || $type == ""){
 
         if(!is_dir('image')){
             mkdir('image', 0777);
