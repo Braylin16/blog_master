@@ -56,7 +56,7 @@ while ($row = $stmt->fetch()) {
 
                         <?php }else{ ?>
                         <!-- Si tiene foto de perfil, coloco la que tiene -->
-                        <p><img src="image/<?=$nameFoto?>" class="perfil" alt="Imagen de usuario de <?=$name?>" title="Foto de perfil de <?=$name?>" height="150"></p>
+                        <p><a href="" download="image/<?=$nameFoto?>"><img src="image/<?=$nameFoto?>" class="perfil" alt="Imagen de usuario de <?=$name?>" title="Foto de perfil de <?=$name?>" height="150"></a></p>
 
                         <?php } ?>
 
