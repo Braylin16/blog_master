@@ -60,6 +60,10 @@ while ($row = $stmt->fetch()) {
                 <button type="submit" class="login" name="submit">Actualizar</button><br>
 
             </form>
+
+            <br/>
+            <hr/>
+            <p><a href="home.php">Volver</a></p>
         </article>
     </section>
 </main>

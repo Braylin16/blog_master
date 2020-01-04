@@ -35,6 +35,8 @@ while ($row = $stmt->fetch()) {
     <link rel="stylesheet" href="css/style.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
+    <!-- Hora -->
+    <script src="js/main.js"></script>
 </head>
 <body>
 
@@ -58,7 +60,19 @@ while ($row = $stmt->fetch()) {
             <p><a href="foto.php"><img src="image/<?=$nameFoto?>" class="perfil" alt="Imagen de usuario de <?=$name?>" title="Foto de perfil de <?=$name?>" height="150"></a></p>
 
             <?php } ?>
-            <h3>Bienvenido: <?php echo $name . " " . $surname; ?></h3>
+
+            <h3>
+                <span>
+                    <?php echo // Mostrado el saludo de buenas 
+                    "<script type='text/javascript'>
+                    document.write(saludo);
+                    </script>"; 
+                    ?>
+                </span>
+
+                <?php echo $name . " " . $surname; ?> <!-- Mostrando el nombre y apellido del usuario -->
+            </h3>
+
             <p class="parrafo"><?php echo  $message; ?></p><br/>
             <a href="edit.php">Editar biografia</a>
             <a class="right" href="editUser.php">Editar usuario</a>
